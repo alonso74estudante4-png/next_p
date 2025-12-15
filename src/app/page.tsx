@@ -21,7 +21,7 @@ export default async function Home() {
             <figure className={styles.figure}>
               <Image
                 src={`/${item.imagem_filme}`}
-                alt={item.theme_filme}
+                alt="{item.theme_filme}"
                 width={160}
                 height={100}
                 className={styles.img}
@@ -44,13 +44,13 @@ export default async function Home() {
 
       <h2 className={styles.section}>Séries</h2>
       <div className={styles.quadroGrande}>
-        {responseSERIES.rows.map((item) => (
+        {responseSERIES.rows.map((item: { id_serie: Key | null | undefined; name_serie: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; imagem_serie: any; theme_serie: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; url_serie: string | undefined; }) => (
           <div className={styles.quadroPequeno} key={item.id_serie}>
             <p className={styles.nome}>{item.name_serie}</p>
             <figure className={styles.figure}>
               <Image
                 src={`/${item.imagem_serie}`}
-                alt={item.name_serie}
+                alt="{item.name_serie}"
                 width={160}
                 height={100}
                 className={styles.img}
