@@ -1,141 +1,105 @@
 .page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
-  display: flex;
+  background: linear-gradient(135deg, #0b0b1f, #141432);
   min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  padding: 30px;
+  color: #ffffff;
+  font-family: "Segoe UI", sans-serif;
 }
 
-.main {
+/* TÍTULO */
+.title {
+  font-size: 3.2rem;
+  color: #ff7a00;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+/* SEÇÃO */
+.section {
+  font-size: 1.6rem;
+  color: #ffd000;
+  margin: 40px 0 20px;
+  border-left: 6px solid #ff7a00;
+  padding-left: 12px;
+}
+
+/* LISTA HORIZONTAL */
+.quadroGrande {
   display: flex;
-  min-height: 100vh;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  gap: 22px;
+  overflow-x: auto;
+  padding-bottom: 15px;
+  scroll-behavior: smooth;
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
+.quadroGrande::-webkit-scrollbar {
+  height: 8px;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
+.quadroGrande::-webkit-scrollbar-thumb {
+  background: #ff7a00;
+  border-radius: 10px;
+}
+
+/* CARD */
+.quadroPequeno {
+  width: 200px;
+  min-width: 200px;
+  background: linear-gradient(160deg, #1f1f3a, #16162c);
+  border-radius: 16px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quadroPequeno:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(255, 122, 0, 0.35);
+}
+
+/* NOME */
+.nome {
+  font-size: 1rem;
   font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+  margin-bottom: 8px;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
+/* IMAGEM */
+.figure {
+  margin: 0;
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
+.img {
   width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin: 10px 0;
 }
 
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+/* DESCRIÇÃO */
+.figcaption {
+  font-size: 13px;
+  color: #bdbdbd;
+  margin-bottom: 10px;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+/* BOTÃO */
+.assistir {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #00e676, #00c853);
+  border-radius: 10px;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.25s ease;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-}
-
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
-  }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
-  }
+.assistir:hover {
+  background: linear-gradient(135deg, #00c853, #009624);
+  transform: scale(1.05);
 }
